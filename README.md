@@ -25,23 +25,39 @@ nano ~/.scripts/uppercase.sh
 
 Paste the following content into your script file:
 
-```#!/bin/bash
+```
+#!/bin/bash
 
-# 1. copy your selection (Ctrl+C)
+# Copier la sélection (Ctrl+C)
 xdotool key --clearmodifiers ctrl+c
-sleep 0.1  # Petit délai pour s'assurer que le texte est copié
+sleep 0.1
 
-# 2. Read on press paper
+# Lire le contenu du presse-papiers
 TEXT=$(xclip -o -selection clipboard)
 
-# 3. Transform in MAJUSCULES
-UPPER=$(echo "$TEXT" | tr '[:lower:]' '[:upper:]')
+# Vérifier si tout est en majuscules
+if [[ "$TEXT" =~ [A-Z] ]] && [[ ! "$TEXT" =~ [a-z] ]]; then
+    # Passer en minuscules
+    NEW_TEXT=$(echo "$TEXT" | tr '[:upper:]' '[:lower:]')
+else
+    # Passer en majuscules + remplacer les lettres accentuées
+    NEW_TEXT=$(echo "$TEXT" \
+        | tr '[:lower:]' '[:upper:]' \
+        | sed -e 's/É/E/g' -e 's/È/E/g' -e 's/Ê/E/g' -e 's/Ë/E/g' \
+              -e 's/À/A/g' -e 's/Â/A/g' -e 's/Ä/A/g' \
+              -e 's/Ù/U/g' -e 's/Û/U/g' -e 's/Ü/U/g' \
+              -e 's/Ô/O/g' -e 's/Ö/O/g' \
+              -e 's/Î/I/g' -e 's/Ï/I/g' \
+              -e 's/Ç/C/g')
+fi
 
-# 4. Write on press paper
-echo -n "$UPPER" | xclip -selection clipboard
+# Écrire dans le presse-papiers
+echo -n "$NEW_TEXT" | xclip -selection clipboard
 
-# 5. Paste texte (Ctrl+V)
+# Coller le texte transformé
 xdotool key --clearmodifiers ctrl+v
+sleep 0.1
+
 ```
 
 #          fourth step           
