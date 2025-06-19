@@ -3,12 +3,12 @@ Convert your text selection to uppercase
 This script can marche for LINUX only
 
 
-# ------------------------          STEP FIRST          ------------------------
+# ------------------------          step first          ------------------------
 
 INSTALL REQUIRED PACKAGES
 sudo apt install xclip xdotool xbindkeys
 
-#------------------------          STEP SECOND          ------------------------
+# ------------------------          step second          ------------------------
 
 CREATE THE SCRIPT FILE
 nano ~/.scripts/uppercase.sh
@@ -17,7 +17,7 @@ If the directory .scripts does not exist, create it first:
 mkdir .scripts
 nano ~/.scripts/uppercase.sh
 
-#------------------------          STEP THIRD          ------------------------
+# ------------------------          step third          ------------------------
 
 Paste the following content into your script file:
 
@@ -40,12 +40,12 @@ echo -n "$UPPER" | xclip -selection clipboard
 xdotool key --clearmodifiers ctrl+v
 ```
 
-#------------------------          STEP FOURTH          ------------------------
+# ------------------------          step fourth          ------------------------
 
 Make the script executable
 chmod +x ~/.scripts/uppercase.sh
 
-#------------------------          STEP FIFTH          ------------------------
+# ------------------------          step fifth          ------------------------
 
 Find your input (mouse button or key) if unknown
 Run the following command to detect input events:
@@ -62,7 +62,7 @@ Add this line to assign your script to mouse button 9 (for example):
 "~/.scripts/uppercase.sh"
   b:9
 
-#------------------------          FINAL STEP          ------------------------
+# ------------------------          final step          ------------------------
 
 Restart xbindkeys to apply changes
 killall xbindkeys
