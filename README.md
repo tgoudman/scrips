@@ -1,19 +1,23 @@
 # scrips
 Convert your text selection to uppercase
+
 This script can marche for LINUX only
 
 
 #          first step           
 
-INSTALL REQUIRED PACKAGES
+install required packages
+
 sudo apt install xclip xdotool xbindkeys
 
 #          second step           
 
-CREATE THE SCRIPT FILE
+create the script file
+
 nano ~/.scripts/uppercase.sh
 
 If the directory .scripts does not exist, create it first:
+
 mkdir .scripts
 nano ~/.scripts/uppercase.sh
 
