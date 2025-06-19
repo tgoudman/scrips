@@ -21,7 +21,7 @@ nano ~/.scripts/uppercase.sh
 
 Paste the following content into your script file:
 
-#!/bin/bash
+``#!/bin/bash
 
 # 1. copy your selection (Ctrl+C)
 xdotool key --clearmodifiers ctrl+c
@@ -37,7 +37,7 @@ UPPER=$(echo "$TEXT" | tr '[:lower:]' '[:upper:]')
 echo -n "$UPPER" | xclip -selection clipboard
 
 # 5. Paste texte (Ctrl+V)
-xdotool key --clearmodifiers ctrl+v
+xdotool key --clearmodifiers ctrl+v``
 
 
 ------------------------          STEP FOURTH          ------------------------
