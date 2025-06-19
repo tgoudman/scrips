@@ -3,7 +3,7 @@ Convert your text selection to uppercase
 This script can marche for LINUX only
 
 
-#------------------------          STEP FIRST          ------------------------
+# 1.------------------------          STEP FIRST          ------------------------
 
 INSTALL REQUIRED PACKAGES
 sudo apt install xclip xdotool xbindkeys
