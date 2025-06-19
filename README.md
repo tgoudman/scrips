@@ -69,7 +69,9 @@ Add this line to assign your script to mouse button 9 (for example):
 #           final step          
 
 Restart xbindkeys to apply changes
+
 killall xbindkeys
+
 xbindkeys
 
 
